@@ -1,0 +1,86 @@
+/* signup 회원가입 페이지 CSS */
+
+.signup-card {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #1e3932; /* 스타벅스 다크 그린 */
+}
+
+.signup-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #00704a; /* 스타벅스 대표 그린 */
+}
+
+.signup-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2f4f4f;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #00704a;
+  box-shadow: 0 0 5px rgba(0, 112, 74, 0.5);
+}
+
+.btn-primary {
+  margin-top: 10px;
+  padding: 12px 0;
+  background-color: #00704a;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004d32;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.links a {
+  color: #00704a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.3s ease;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

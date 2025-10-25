@@ -1,0 +1,140 @@
+/* mypage 로그인 페이지 CSS */
+
+.mypage-card {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #1e3932; /* 스타벅스 다크 그린 */
+}
+
+.mypage-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #00704a; /* 스타벅스 대표 그린 */
+}
+
+.mypage-card .subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2f4f4f;
+}
+
+.login-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.login-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* 일반 로그인 버튼 스타일 추가 (로그인 버튼이니 .login 클래스를 추가하면 구분 가능) */
+.login-btn.login {
+  background-color: #00704a; /* 스타벅스 대표 그린 */
+}
+
+.login-btn.login:hover {
+  background-color: #004d32; /* 좀 더 진한 녹색 */
+}
+
+/* 각 플랫폼 색상 */
+
+.login-btn.starid {
+  background-color: #00704a; /* 스타벅스 대표 그린 */
+  color: white;
+}
+
+.login-btn.kakao {
+  background-color: #FEE500;
+  color: #3c1e1e;
+}
+
+.login-btn.kakao:hover {
+  background-color: #fbd200;
+}
+
+.login-btn.naver {
+  background-color: #03C75A;
+}
+
+.login-btn.naver:hover {
+  background-color: #02a94a;
+}
+
+.login-btn.google {
+  background-color: #4285F4;
+}
+
+.login-btn.google:hover {
+  background-color: #357ae8;
+}
+
+.keep-login {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #444444;
+  user-select: none;
+  text-align: center;
+}
+
+.keep-login input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  width: 100%;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #00704a;
+  border: 2px solid #00704a; /* 스타벅스 그린 */
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #00704a;
+  color: white;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.links a {
+  color: #00704a;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: text-decoration 0.3s ease;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,35 @@
+/*
+ * store.css
+ * '매장찾기' 페이지 전용 스타일
+ */
+
+.store-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.store-container h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.store-container p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * 지도 컨테이너 스타일
+ * js/store.js 파일의 인라인 스타일을 이곳으로 옮겼습니다.
+ */
+#map {
+  height: 600px; /* 지도 높이 */
+  width: 100%;   /* 너비 */
+  border-radius: 8px; /* 둥근 모서리 */
+  border: 1px solid #ddd;
+}

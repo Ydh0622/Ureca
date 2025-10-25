@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>스타벅스 클론</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">Starbucks</a>
+	  <span id="logoutBtn"></span>
+      <nav class="nav">
+        <a href="/menu" class="nav-link" data-link>메뉴</a>
+        <a href="/store" class="nav-link" data-link>매장찾기</a>
+        <a href="/event" class="nav-link" data-link>이벤트</a>
+        <a href="#" class="nav-link">주문하기</a>
+		<a href="/mypage" class="nav-link" data-link>마이페이지</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="app" class="container">
+    <!-- 동적 컨텐츠 삽입 영역 -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Starbucks. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#" class="footer-link">이용약관</a>
+        <a href="#" class="footer-link">개인정보처리방침</a>
+        <a href="#" class="footer-link">고객센터</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/index.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/signup.js"></script>
+  <script src="js/starid.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/menuDetail.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/event.js"></script>
+  <script src="js/eventDetail.js"></script>
+  <script src="js/router.js"></script>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/starid.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/event.css">
+</body>
+</html>

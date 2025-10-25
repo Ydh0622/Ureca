@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ureca.web.model.dao.MenuDao">
+
+    <!-- MenuDetailDto 결과를 위한 resultMap -->
+    <resultMap id="menuDetailDtoResultMap" type="com.ureca.web.model.dto.MenuDetailDto">
+        <id property="no" column="menu_no"/>
+        <result property="title" column="menu_title"/>
+        <result property="price" column="menu_price"/>
+        <result property="cgy" column="menu_category"/>
+        <result property="description" column="menu_description"/>
+        <result property="img" column="menu_img"/>
+        
+
+        <!-- offers 컬렉션 (상세 옵션 및 프로모션) -->
+        <collection property="offers" ofType="com.ureca.web.model.dto.MenuDetailDto$ApplicableOffer"
+                    javaType="java.util.ArrayList">
+            <id property="itemId" column="item_id"/>
+            <result property="itemName" column="item_name"/>
+            <result property="category" column="category"/>
+            <result property="itemprice" column="item_price"/>
+            <result property="sizeOptions" column="size_options"/>
+            <result property="calories" column="calories"/>
+            <result property="ingredients" column="ingredients"/>
+            <result property="allergens" column="allergens"/>
+            <result property="description" column="item_description"/>
+
+            <!-- 프로모션 정보 -->
+            <result property="promoId" column="promo_id"/>
+            <result property="promoName" column="promo_name"/>
+            <result property="promoType" column="promo_type"/>
+            <result property="discountValue" column="discount_value"/>
+            <result property="discountRate" column="discount_rate"/>
+            <result property="promoDescription" column="promo_description"/>
+            <result property="promoStartDate" column="promo_start_date"/>
+            <result property="promoEndDate" column="promo_end_date"/>
+
+            <!-- 추가 정보 -->
+            <result property="discountAmount" column="discountAmount"/>
+            <result property="offerApplicableStartDate" column="offer_applicable_start_date"/>
+            <result property="offerApplicableEndDate" column="offer_applicable_end_date"/>
+        </collection>
+    </resultMap>
+
+    <!-- 메뉴 리스트 -->
+    <select id="getMenus" resultType="Menu">
+        SELECT * FROM menu;
+    </select>
+
+    <!-- 메뉴 상세 + 옵션/프로모션 -->
+    <select id="selectMenuDetailWithOffers" resultMap="menuDetailDtoResultMap">
+        SELECT
+            m.no AS menu_no,
+            m.title AS menu_title,
+            m.price AS menu_price,
+            m.cgy AS menu_category,
+            m.description AS menu_description,
+            m.img AS menu_img,
+
+            im.item_id,
+            im.item_name,
+            im.category,
+            im.item_price,
+           	im.size_options,
+            im.calories,
+            im.ingredients,
+            im.allergens,
+
+            prom.promo_id,
+            prom.promo_name,
+            prom.promo_type,
+            prom.discount_value,
+            prom.discount_rate,
+            prom.description AS promo_description,
+            prom.start_date AS promo_start_date,
+            prom.end_date AS promo_end_date,
+
+           	ppp.discountAmount,
+            ppp.applicable_start_date AS launch_date,
+            ppp.applicable_end_date AS discontinue_date
+        FROM
+            menu m
+            LEFT JOIN menu_item_promotion ppp
+                ON m.no = ppp.menu_no
+            LEFT JOIN item im
+                ON ppp.item_id = im.item_id
+            LEFT JOIN promotion prom
+                ON ppp.promo_id = prom.promo_id
+        WHERE
+            m.no = #{no}
+            AND (ppp.is_active = TRUE OR ppp.is_active IS NULL)
+            AND (ppp.applicable_end_date IS NULL OR ppp.applicable_end_date >= CURDATE())
+        ORDER BY
+            im.item_price ASC, ppp.promo_id
+    </select>
+
+</mapper>

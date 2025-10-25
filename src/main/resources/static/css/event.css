@@ -1,0 +1,177 @@
+/*
+ * event.css
+ * 이벤트 목록 페이지 전용 스타일
+ */
+
+/* --- 기본 레이아웃 --- */
+.event-page-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* --- 헤더 및 필터 --- */
+.event-page-header h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.event-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+  gap: 10px;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.filter-btn.active {
+  background-color: #00704a; /* 스타벅스 그린 */
+  color: #fff;
+  border-color: #00704a;
+}
+
+/* --- 이벤트 섹션 --- */
+.event-list-section {
+  margin-bottom: 1rem;
+}
+
+.event-list-section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* 이벤트 카드 그리드 */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* --- 이벤트 카드 --- */
+.event-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.event-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 이미지 비율을 1:1로 유지 */
+  overflow: hidden;
+  position: relative; /* (수정) 배지(badge)의 기준점이 되도록 추가 */
+}
+
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 잘리지 않고 꽉 차게 */
+}
+
+.event-card-info {
+  padding: 1rem;
+}
+
+.event-card-info h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 제목이 길면 ...으로 표시 */
+}
+
+.event-card-info p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* --- (신규) 이벤트 카드 배지 --- */
+.event-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 10;
+}
+
+.event-badge.new {
+  background-color: #00704a; /* 스타벅스 그린 */
+}
+
+.event-badge.limited {
+  background-color: #d63031; /* 강조 레드 */
+}
+
+.event-badge.expired {
+  background-color: #888; /* (신규) 종료 배지 (회색) */
+}
+
+/* --- (신규) 지난 이벤트 및 기타 --- */
+.event-list-section.past-events {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.event-list-section.past-events h2 {
+  color: #888; /* 지난 이벤트 제목은 연하게 */
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-more-btn {
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* '이벤트 없음' 메시지 */
+.no-events-message {
+  text-align: center;
+  color: #888;
+  padding: 4rem 0;
+  grid-column: 1 / -1; /* 그리드 전체 영역 차지 */
+}

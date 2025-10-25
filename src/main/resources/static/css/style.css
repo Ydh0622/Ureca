@@ -1,0 +1,133 @@
+/* style.css */
+
+/* 공통 스타일 */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #FFFFFF;
+  color: #333333;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.header {
+  background-color: #00704a; /* 스타벅스 그린 */
+  padding: 15px 0;
+  color: white;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  margin-top: 10px;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #004d32;
+}
+
+.nav-link.active {
+  background-color: #004d32;
+}
+
+/* 메인 컨텐츠 영역 */
+main.container {
+  flex: 1 0 auto; /* 푸터를 아래로 밀어내도록 확장 */
+  padding: 40px 0;
+  min-height: 500px; /* 기본 높이 설정, 필요시 조절 */
+}
+
+/* 푸터 */
+.footer {
+  flex-shrink: 0; /* 줄어들지 않도록 */
+  background-color: #004d32;
+  color: #c1c1c1;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-link {
+  color: #c1c1c1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* 로그아웃 버튼 스타일 */
+#logoutBtn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px; /* nav 메뉴 간격과 비슷하게 */
+}
+
+#logoutBtn.btn {
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* 부트스트랩 btn-danger 기본 배경색과 잘 어울리게 조정 가능 */
+}
+
+/* 마우스 올렸을 때 배경색 변화 */
+#logoutBtn.btn:hover {
+  background-color: #c9302c;
+  color: white;
+}
+
+.item-description {
+  white-space: pre-line !important; /* !important를 추가하여 우선순위를 높입니다. */
+}
+
+
+

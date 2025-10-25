@@ -1,0 +1,110 @@
+:root {
+  --sb-green: #00704a;
+  --sb-gradient: linear-gradient(135deg, #00704a, #004d32);
+  --sb-shadow: 0 8px 25px rgba(0, 112, 74, 0.25);
+}
+
+.star-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid rgba(0, 112, 74, 0.1);
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #1e3932;
+}
+
+.star-card h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: var(--sb-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+}
+
+.star-card .form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.star-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2c4f3a;
+}
+
+.star-card input[type="text"],
+.star-card input[type="password"] {
+  width: 100%;
+  padding: 0.9rem 1rem;     /* upid-card 스타일 패딩으로 변경 */
+  border: 2px solid #d3d9d2;
+  border-radius: 10px;
+  font-size: 1rem;         /* upid-card 폰트 크기 */
+  background: #f7faf6;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;         /* 최대 너비 유지 */
+}
+
+
+.star-card input[type="text"]:focus,
+.star-card input[type="password"]:focus {
+  border-color: var(--sb-green);
+  box-shadow: 0 0 8px rgba(0, 112, 74, 0.3);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 16px 0;
+  margin-top: 20px;
+  background: var(--sb-gradient);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--sb-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004d32;
+  box-shadow: 0 12px 35px rgba(0, 112, 74, 0.4);
+}
+
+.star-card .links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #53685e;
+}
+
+.star-card .links a {
+  color: var(--sb-green);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: text-decoration 0.3s ease;
+}
+
+.star-card .links a:hover {
+  text-decoration: underline;
+}
+
+#messageArea {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #aa2f00;
+}
